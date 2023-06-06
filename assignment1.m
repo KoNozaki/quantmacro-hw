@@ -28,6 +28,10 @@ jpn_std = std(jpn_detrended);
 corr_sg_jp = corrcoef(sgp_detrended, jpn_detrended);
 corr_sg_jp = corr_sg_jp(1, 2);
 
+fprintf('シンガポールの循環変動成分の標準偏差: %.4f\n', sgp_std);
+fprintf('日本の循環変動成分の標準偏差: %.4f\n', jpn_std);
+fprintf('シンガポールと日本の循環変動成分の相関係数: %.4f\n', corr_sg_jp);
+
 % 4. 両国のDetrended logを比較するグラフを作成する
 years = datetime(sgp_data.Data(:, 1), 'ConvertFrom', 'datenum');
 figure
